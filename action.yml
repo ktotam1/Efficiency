@@ -32,7 +32,7 @@ runs:
    - run: pip install -r requirements.txt
      shell: bash
      id: py
-     name: Execute Python
+   - name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
      run: python ${{ github.action_path }}/main.py
