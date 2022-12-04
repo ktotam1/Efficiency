@@ -20,20 +20,15 @@ outputs:
   description: "All files checked"
 runs:
  using: composite
- steps:
-   - name: Checkout Repository 
-     uses: actions/checkout@v3.0.2
-     with:
-      repository: ${{ inputs.repo }}
-      ref: ${{ inputs.ref }}
-   - name: Setup Python
+ steps:      
    - uses: actions/setup-python@v4
    - uses: actions/checkout@v2
    - uses: BSFishy/pip-action@v1
      with:
+      repository: ${{ inputs.repo }}
+      ref: ${{ inputs.ref }}
       packages: |
        scikit-learn
        javalang
        regex
-   - shell: bash
    - run: python main.py 
