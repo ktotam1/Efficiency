@@ -6,10 +6,13 @@ import sys
 def main():
     filename = "./main.py"
     file = open(filename, "r")
-    output = file.read()
+    loops = 0
+    for line in file:
+        if "for" in line or "while" in line:
+            loops = loops+1
     
     
-    
+    output = "Expecting {} kgs of CO2 output".format(loops)
     sys.stdout.write(f'::set-output name=output::{output}\n')
 
     sys.exit(0)
