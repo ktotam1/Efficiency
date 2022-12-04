@@ -36,4 +36,7 @@ runs:
      name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
-     run: python ${{ github.action_path }}/main.py
+     run: |
+      pip install requests
+      python -m pip install requests
+      python ${{ github.action_path }}/main.py
