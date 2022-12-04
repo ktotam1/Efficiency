@@ -13,7 +13,7 @@ def main():
     print(java_code)
     resp = requests.post(url, json=java_code)
     print("predicted running time:")
-    print(resp.content)
+    print(resp.data)
     
     sys.exit(0)
 
