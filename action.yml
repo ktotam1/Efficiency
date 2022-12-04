@@ -28,7 +28,7 @@ runs:
       ref: ${{ inputs.ref }}
    - name: Install Dependencies 
      shell: bash
-     run: pip install -r requirements.txt
+     run: pip install scikit-learn
    - name: Setup Python
      uses: actions/setup-python@v4
      with: 
