@@ -28,11 +28,10 @@ runs:
      uses: actions/setup-python@v4
      with: 
       python-version: '3.7'
-   - name: Install dependencies
-     run: pip install -r requirements.txt
    - shell: bash
      id: py
    - name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
+     run: pip install -r requirements.txt
      run: python ${{ github.action_path }}/main.py
