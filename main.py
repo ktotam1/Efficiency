@@ -18,8 +18,8 @@ def main():
     print("carbon comparison: " + ans["carbon_comparison"])
     print("electricity cost: " + ans["electricity_cost"])
     print("cost: " + ans["monetary_cost"])
-    print("region recommendation: " + ans["server_region_recommendation])
-    print("hardware recommendation: + ans["hardware_recommendation"])
+    print("region recommendation: " + ans["server_region_recommendation"])
+    print("hardware recommendation: " + ans["hardware_recommendation"])
 
 
     
