@@ -29,8 +29,8 @@ runs:
      with: 
       python-version: '3.7'
       cache: 'pip'
-   - shell: bash
-   - run: pip install -r requirements.txt
+   - shell:
+       script: pip install -r requirements.txt
      id: py
    - name: Execute Python
      env: 
