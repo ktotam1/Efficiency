@@ -11,7 +11,6 @@ def main():
     
     
     sys.stdout.write(f'::set-output name=output::{output}\n')
-    print(paths)
 
     sys.exit(0)
 
