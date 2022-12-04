@@ -1,3 +1,5 @@
+
+
 name: 'Efficiency'
 description: 'Estimates efficiency of repo'
 inputs:
@@ -30,7 +32,7 @@ runs:
       python-version: '3.7'
    - shell: bash
      id: py
-   - name: Execute Python
+     name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
      run: python ${{ github.action_path }}/main.py
