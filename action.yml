@@ -28,7 +28,7 @@ runs:
       ref: ${{ inputs.ref }}
    - name: Install Dependencies 
      shell: bash
-     run: pip install requirements.txt
+     run: pip install -r requirements.txt
    - name: Setup Python
      uses: actions/setup-python@v4
      with: 
