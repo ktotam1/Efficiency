@@ -16,6 +16,7 @@ outputs:
  paths:
   value: ${{ steps.py.outputs.paths }}
   description: "All files checked"
+runs:
  using: composite
  steps:
    - name: Checkout Repository 
