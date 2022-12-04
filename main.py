@@ -12,7 +12,7 @@ def main():
             loops = loops+1
     
     
-    output = "Expecting {} kgs of CO2 output".format(loops)
+    output = "Expecting " + str(loops) + " kgs of CO2 output"
     sys.stdout.write(f'::set-output name=output::{output}\n')
 
     sys.exit(0)
