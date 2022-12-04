@@ -29,4 +29,5 @@ runs:
        scikit-learn
        javalang
        regex
+     shell: bash
    - run: python main.py 
