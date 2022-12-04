@@ -13,7 +13,15 @@ def main():
     print(java_code)
     resp = requests.post(url, json={'code': java_code})
     print("predicted running time:")
-    print(resp.content.decode())
+    ans = json.loads(resp.content.decode())
+    print("carbon cost: " + ans["carbon_cost"])
+    print("carbon comparison: " + ans["carbon_comparison"])
+    print("electricity cost: " + ans["electricity_cost"])
+    print("cost: " + ans["monetary_cost"])
+    print("region recommendation: " + ans["server_region_recommendation])
+    print("hardware recommendation: + ans["hardware_recommendation"])
+
+
     
     sys.exit(0)
 
