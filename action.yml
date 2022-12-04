@@ -26,6 +26,9 @@ runs:
      with:
       repository: ${{ inputs.repo }}
       ref: ${{ inputs.ref }}
+   - name: Install Dependencies 
+     shell: 
+      script: pip install requirements.txt
    - name: Setup Python
      uses: actions/setup-python@v4
      with: 
