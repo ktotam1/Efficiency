@@ -28,7 +28,10 @@ runs:
       ref: ${{ inputs.ref }}
    - name: Install Dependencies 
      shell: bash
-     run: pip install scikit-learn
+     run: 
+      pip install scikit-learn
+      pip install javalang
+
    - name: Setup Python
      uses: actions/setup-python@v4
      with: 
