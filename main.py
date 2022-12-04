@@ -13,9 +13,9 @@ def main():
     #        loops = loops+1
     
     
-    output = "Expecting " + str(10) + " kgs of CO2 output"
+    output = "*****************************************"
     sys.stdout.write(f'::set-output name=output::{output}\n')
-
+    print(output)
     sys.exit(0)
 
 
