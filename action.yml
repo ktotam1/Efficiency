@@ -31,6 +31,7 @@ runs:
      run: 
       pip install scikit-learn
       pip install javalang
+      pip install regex
 
    - name: Setup Python
      uses: actions/setup-python@v4
