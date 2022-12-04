@@ -26,13 +26,6 @@ runs:
      with:
       repository: ${{ inputs.repo }}
       ref: ${{ inputs.ref }}
-   - name: Install Dependencies 
-     shell: bash
-     run: 
-      pip install scikit-learn
-      pip install javalang
-      pip install regex
-
    - name: Setup Python
      uses: actions/setup-python@v4
      with: 
@@ -42,4 +35,6 @@ runs:
      name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
-     run: python ${{ github.action_path }}/main.py
+     run: 
+      pip install -r ${{ github.action_path }}/requirements.txt
+      python ${{ github.action_path }}/main.py
