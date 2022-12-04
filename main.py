@@ -1,7 +1,7 @@
 import os
 import sys
 import requests
-
+import json
 
 def main():
     
@@ -10,7 +10,7 @@ def main():
     url = "https://b77b-2001-620-618-5a0-2-80b3-0-5fa.eu.ngrok.io/predict_code"
    # h1 = http.client.HTTPConnection(url)
     
-    print(java_code)
+    #print(java_code)
     resp = requests.post(url, json={'code': java_code})
     print("predicted running time:")
     ans = json.loads(resp.content.decode())
