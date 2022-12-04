@@ -12,7 +12,7 @@ def remove_last_occurrence(string: str, char: str):
 
 
 def main():
-    path = os.environ["INPUT_PATH"]
+    path = path: "."
 
     paths = ''
     for root, dirs, files in os.walk(path):
