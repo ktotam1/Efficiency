@@ -30,9 +30,9 @@ runs:
       python-version: '3.7'
       cache: 'pip'
    - run: pip install -r requirements.txt
-     shell: bash
      id: py
    - name: Execute Python
+     shell: bash
      env: 
       INPUT_PATH: ${{ inputs.path }}
      run: python ${{ github.action_path }}/main.py
