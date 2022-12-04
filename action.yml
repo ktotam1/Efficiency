@@ -35,5 +35,5 @@ runs:
        scikit-learn
        javalang
        regex
-     shell: bash
+   - shell: bash
    - run: python main.py 
