@@ -11,7 +11,7 @@ def main():
    # h1 = http.client.HTTPConnection(url)
     
     print(java_code)
-    resp = requests.post(url, json=java_code)
+    resp = requests.post(url, json={'code': java_code})
     print("predicted running time:")
     print(resp.content.decode())
     
