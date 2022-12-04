@@ -1,15 +1,38 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Efficiency'
+description: 'Estimates efficiency of repo'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+ file: 
+  description: "File to check for efficiency"
+  required: true
+  default: "/main.py"
+ repo:
+  description: "Repo to check for efficiency"
+  required: true
+ ref:
+  description: "Branch or tag to checkout"
+  default: "master"
+  required: false
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+ paths:
+  value: ${{ steps.py.outputs.paths }}
+  description: "All files checked"
+ using: composite
+ steps:
+   - name: Checkout Repository 
+     uses: actions/checkout@v3.0.2
+     with:
+      repository: ${{ inputs.repo }}
+      ref: ${{ inputs.ref }}
+   - name: Setup Python
+     uses: actions/setup-python@v4
+     with: 
+	python-version: '3.7'
+   - shell: bash
+     id: py
+     name: Execute Python
+     env: 
+	INPUT_PATH: ${{ inputs.path }}
+     run: python ${{ github.action_path }}/main.py
+    
+	 
+
