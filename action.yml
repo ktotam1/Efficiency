@@ -1,5 +1,3 @@
-
-
 name: 'Efficiency'
 description: 'Estimates efficiency of repo'
 inputs:
@@ -20,14 +18,22 @@ outputs:
   description: "All files checked"
 runs:
  using: composite
- steps:      
-   - uses: actions/setup-python@v4
-   - uses: actions/checkout@v2
-   - uses: BSFishy/pip-action@v1
+ steps:
+   - name: Checkout Repository 
+     uses: actions/checkout@v3.0.2
      with:
-      packages: |
-       scikit-learn
-       javalang
-       regex
+      repository: ${{ inputs.repo }}
+      ref: ${{ inputs.ref }}
+   - name: Install Dependencies 
      shell: bash
-   - run: python main.py 
+     run: pip install scikit-learn
+   - name: Setup Python
+     uses: actions/setup-python@v4
+     with: 
+      python-version: '3.7'
+   - shell: bash
+     id: py
+     name: Execute Python
+     env: 
+      INPUT_PATH: ${{ inputs.path }}
+     run: python ${{ github.action_path }}/main.py
