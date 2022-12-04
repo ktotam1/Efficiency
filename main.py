@@ -5,7 +5,7 @@ import sys
 
 def main():
     
-    filename = "./main.py"
+    filename = "./App.java"
     file = open(filename, "r")
     loops = 0
     for line in file:
