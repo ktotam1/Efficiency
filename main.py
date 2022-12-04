@@ -13,7 +13,7 @@ def main():
             loops = loops+1
     
     
-    output = "Expecting " + str(loops) + " of CO2"
+    output = "Expecting " + str(loops) + " kg of CO2"
     #sys.stdout.write(f'::set-output name=output::{output}\n')
     print(output)
     sys.exit(0)
