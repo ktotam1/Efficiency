@@ -33,5 +33,4 @@ runs:
    - name: Execute Python
      env: 
       INPUT_PATH: ${{ inputs.path }}
-     run: pip install -r requirements.txt
      run: python ${{ github.action_path }}/main.py
