@@ -7,7 +7,7 @@ def main():
     
    
     java_code = open('./App.java').read()
-    url = "https://143d-2001-620-618-5a0-2-80b3-0-5fa.eu.ngrok.io"
+    url = "https://fd3d-2001-620-618-5a0-2-80b3-0-5fa.eu.ngrok.io"
     print(java_code)
     resp = requests.post(url, json=java_code)
     
